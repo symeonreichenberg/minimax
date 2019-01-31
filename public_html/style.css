@@ -248,11 +248,111 @@ textarea {
   overflow: auto;
   vertical-align: top; }
 
-/* line 528, sass/libs/_normalize.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+.table {
+  /*!
+  // IE needs inline-block to position scrolling shadows otherwise use:
+  // display: block;
+  // max-width: min-content;
+  */
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  
+  overflow-x: auto;
+  
+  // optional - looks better for small cell values
+  white-space: nowrap;
 
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table,
+.table--flip tbody {
+  // optional - enable iOS momentum scrolling
+  -webkit-overflow-scrolling: touch;
+  
+  // scrolling shadows
+  background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
+              radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
+  background-size: 10px 100%, 10px 100%;
+  background-attachment: scroll, scroll;
+  background-repeat: no-repeat;
+}
+
+// change these gradients from white to your background colour if it differs
+// gradient on the first cells to hide the left shadow
+.table td:first-child,
+.table--flip tbody tr:first-child {
+  background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+  background-repeat: no-repeat;
+  background-size: 20px 100%;
+}
+
+// gradient on the last cells to hide the right shadow
+.table td:last-child,
+.table--flip tbody tr:last-child {
+  background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 20px 100%;
+}
+
+.table th {
+  font-size: 11px;
+  text-align: left;
+  text-transform: uppercase;
+  background: #f2f0e6;
+}
+
+.table th,
+.table td {
+  padding: 6px 12px;
+  border: 1px solid #d9d7ce;
+}
+
+.table--flip {
+  display: flex;
+  overflow: hidden;
+  background: none;
+}
+
+.table--flip thead {
+  display: flex;
+  flex-shrink: 0;
+  min-width: min-content;
+}
+
+.table--flip tbody {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.table--flip tr {
+  display: flex;
+  flex-direction: column;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+
+.table--flip td,
+.table--flip th {
+  display: block;
+}
+
+.table--flip td {
+  background-image: none !important;
+  // border-collapse is no longer active
+  border-left: 0;
+}
+
+// border-collapse is no longer active
+.table--flip th:not(:last-child),
+.table--flip td:not(:last-child) {
+  border-bottom: 0;
+}
 /* line 534, sass/libs/_normalize.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
@@ -2674,8 +2774,9 @@ body {
     margin-right: 10px; }
   /* line 30, sass/pages/_download.scss */
   .item .social-share {
-    float: right;
+    float: left;
     border: 1px solid #2c2c2c;
+    margin-top: 10px;
     padding: 8px 10px;
     line-height: normal; }
     /* line 35, sass/pages/_download.scss */
@@ -2694,3 +2795,36 @@ body {
         color: #fd5927; }
 
 /*# sourceMappingURL=style.css.map */
+@media screen and (max-width: 600px) {
+  .video-frame {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+.logo-header {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  animation-delay:2.5s;
+  -webkit-animation-delay:2.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards;
+   animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes pulse{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.50;
+    transform-origin: 50% 50%;
+    transform: rotate(-1deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1);
+  }
+}
