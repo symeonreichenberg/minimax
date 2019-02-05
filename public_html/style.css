@@ -1,9 +1,3 @@
-/*!
- * Project_Name: Themezy Band Template
- * Author: Themezy
- * Email: info@themezy.com
- * URL: http://themezy.com
- */
 /*=========================================== 
  * Importing CSS Libraries
  *===========================================*/
@@ -54,7 +48,14 @@ textarea {
 /* line 119, sass/libs/_normalize.scss */
 body {
   margin: 0; }
-
+.inverted {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 /* line 132, sass/libs/_normalize.scss */
 a {
   background: transparent; }
@@ -1892,20 +1893,26 @@ body {
     /* line 40, sass/layout/_header.scss */
     .main-navigation .toggle-menu:hover, .main-navigation .toggle-menu:active, .main-navigation .toggle-menu.active {
       color: #fd5927; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 1200px) {
+     
+    }
+    @media screen and (max-width: 1200px) {
       /* line 30, sass/layout/_header.scss */
       .main-navigation .toggle-menu {
         display: block; } }
+    .hide {
+      display: none;
+    }
   /* line 48, sass/layout/_header.scss */
   .main-navigation .menu {
     list-style: none;
     padding-left: 0;
     margin: 0; }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 1200px) {
       /* line 48, sass/layout/_header.scss */
       .main-navigation .menu {
         display: block !important; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 1200px) {
       /* line 48, sass/layout/_header.scss */
       .main-navigation .menu {
         display: none; } }
@@ -1963,7 +1970,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
   display: none;
   margin-bottom: 20px; }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 1200px) {
     /* line 105, sass/layout/_header.scss */
     .mobile-menu {
       display: none !important; } }
@@ -2828,3 +2835,5 @@ body {
     transform: rotate(-15deg) scale(1);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
