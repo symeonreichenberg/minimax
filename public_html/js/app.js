@@ -1,3 +1,7 @@
+$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
 (function($, document, window){
 
 	$(document).ready(function(){
@@ -34,8 +38,8 @@
 		var eventCarousel = $(".event-carousel");
 		eventCarousel.owlCarousel({
  
-			autoPlay: 5000, //Set AutoPlay to 5 seconds
-			rewindNav: true,
+			autoPlay: 3000, //Set AutoPlay to 3 seconds
+			rewindNav: false,
 			items : 4,
 			itemsDesktop : [1199,3],
 			itemsDesktopSmall : [979,3]

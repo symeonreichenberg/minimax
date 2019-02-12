@@ -2,10 +2,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-    <title>Band Template</title>
+    <title>Duo Minimax</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    <link href="css/style.css" rel="stylesheet" >
     <!--[if lt IE 9]>
     <script src="js/ie-support/html5.js"></script>
     <script src="js/ie-support/respond.js"></script>
@@ -48,36 +50,46 @@
             </ul></div>
         </div>
       </header>
-      <div class="hero">
-        <div class="slider">
-          <ul class="slides">
-            <li class="lazy-bg flex-active-slide" data-background="images/slides/slide-1.jpg" style="background-image: url(&quot;images/slides/slide-1.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-              <div class="container">
-                <h2 class="slide-title">Jeden titulek semka</h2>
-                <h3 class="slide-subtitle">Běží liška k táboru</h3>
-                <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
-                <a href="#" class="button cut-corner">Přečíst víc</a>
-              </div>
-            </li>
-            <li class="lazy-bg" data-background="images/slides/slide-2.jpg" style="background-image: url(&quot;images/slides/slide-2.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-              <div class="container">
-                <h2 class="slide-title">Další titulek semhle</h2>
-                <h3 class="slide-subtitle">nese pytel zázvoru!</h3>
-                <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
-                <a href="#" class="button cut-corner">Přečíst víc</a>
-              </div>
-            </li>
-            <li class="lazy-bg" data-background="images/slides/slide-3.jpg" style="background-image: url(&quot;images/slides/slide-3.jpg&quot;); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-              <div class="container">
-                <h2 class="slide-title">Aaaa třetí titulek</h2>
-                <h3 class="slide-subtitle">Třetí podtitulek</h3>
-                <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
-                <a href="#" class="button cut-corner">Přečíst víc</a>
-              </div>
-            </li>
-          </ul>
-        <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a>2</a></li><li><a>3</a></li></ol></div>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/slides/slide-1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="slide-title">Jeden titulek semka</h2>
+              <h3 class="slide-subtitle">Běží liška k táboru</h3>
+              <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+              <a href="#" class="button cut-corner">Přečíst víc</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/slides/slide-2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="slide-title">Další titulek semhle</h2>
+              <h3 class="slide-subtitle">nese pytel zázvoru!</h3>
+              <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+              <a href="#" class="button cut-corner">Přečíst víc</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/slides/slide-3.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="slide-title">Aaaa třetí titulek</h2>
+              <h3 class="slide-subtitle">Třetí podtitulek</h3>
+              <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+              <a href="#" class="button cut-corner">Přečíst víc</a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+      
       <main class="main-content">
         <!-- about-section -->
         <section id="about" class="fullwidth-block inner-content">
@@ -202,7 +214,11 @@
               </div>
               <div class="filterable-items valec" style="position: relative; overflow: hidden; height: 861px;">
                 <div class="filterable-item valec" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
-                  <a href="images/gallery/valec/01.jpg"><figure><img src="images/gallery/valec/thumbs/01.jpg" alt="Klub Válec 1"></figure></a>
+                  <a href="images/gallery/valec/01.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <figure>
+                      <img src="images/gallery/valec/thumbs/01.jpg" alt="Klub Válec 1">
+                    </figure>
+                  </a>
                 </div>
                 <div class="filterable-item valec" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                   <a href="images/gallery/valec/02.jpg"><figure><img src="images/gallery/valec/thumbs/02.jpg" alt="Klub Válec 2"></figure></a>
@@ -271,10 +287,9 @@
               </div>
               <div class="social-share">
                 <span>Sdílet:</span>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="http://www.facebook.com/sharer.php?u=http://www.duominimax.cz/mp3/ctvrta-cenova.mp4"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com/share?text=$DuoMinimax&url=http://www.duominimax.cz/mp3/ctvrta-cenova.mp4"><i class="fa fa-twitter"></i></a>
+                <a href="http://pinterest.com/pin/create/button/?url=http://www.duominimax.cz/mp3/ctvrta-cenova.mp4"><i class="fa fa-pinterest"></i></a>
               </div>
             </div>
           </div>
@@ -295,10 +310,9 @@
                   </audio>
                   <div class="social-share">
                     <span>Sdílet:</span>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?u=http://www.duominimax.cz/mp3/4-cenova.ogg"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/share?text=$DuoMinimax&url=http://www.duominimax.cz/mp3/4-cenova.ogg"><i class="fa fa-twitter"></i></a>
+                    <a href="http://pinterest.com/pin/create/button/?url=http://www.duominimax.cz/mp3/4-cenova.ogg"><i class="fa fa-pinterest"></i></a>
                   </div>
                 </div>
               </div>
@@ -313,10 +327,9 @@
                   </audio>
                   <div class="social-share">
                     <span>Sdílet:</span>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?u=http://www.duominimax.cz/mp3/zeme-jmenem-cud.ogg"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/share?text=$DuoMinimax&url=http://www.duominimax.cz/mp3/zeme-jmenem-cud.ogg"><i class="fa fa-twitter"></i></a>
+                    <a href="http://pinterest.com/pin/create/button/?url=http://www.duominimax.cz/mp3/zeme-jmenem-cud.ogg"><i class="fa fa-pinterest"></i></a>
                   </div>
                 </div>
               </div>
@@ -402,31 +415,44 @@
               </table>
             </div>
             <h3 style="text-align: center;">Stageplan</h3>
-            <div class="row" style="text-align: center;">
-              <div class="col-xs-4"></div>
-              <div class="col-xs-4">
-                <strong>basová kytara</strong><br/>out XLR<br/>230V
+            <div class="stage">
+              <div class="row" style="text-align: center;">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                  <img src="images/musician2.png" style="margin-bottom: 10px;" class="w-100">
+                </div>
+                <div class="col-xs-4"></div>
               </div>
-              <div class="col-xs-4"></div>
-            </div>
-            <div class="row" style="text-align: center;">
-              <div class="col-xs-4">
-                <strong>akustická kytara</strong><br/>out JACK<br/>230V<br/>zpěvový mikrofon
+              <div class="row" style="text-align: center;">
+                <div class="col-xs-4">
+                  <img src="images/musician1.png" class="w-100">
+                </div>
+                <div class="col-xs-4">
+                  <strong>basová kytara</strong><br/>out XLR<br/>230V
+                </div>
+                <div class="col-xs-4">
+                  <img src="images/musician3.png" class="w-100">
+                </div>
               </div>
-              <div class="col-xs-4"></div>
-              <div class="col-xs-4">
-                <strong>akustická kytara</strong><br/>out JACK<br/>230V<br/>zpěvový mikrofon
+              <div class="row" style="text-align: center;">
+                <div class="col-xs-4">
+                  <strong>akustická kytara</strong><br/>out JACK<br/>230V<br/>zpěvový mikrofon
+                </div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                  <strong>akustická kytara</strong><br/>out JACK<br/>230V<br/>zpěvový mikrofon
+                </div>
               </div>
-            </div>
-            <div class="row" style="text-align: center; margin-top: 2rem">
-              <div class="col-xs-4">
-                <p class="leading">ODPOSLECH 1</p>
-              </div>
-              <div class="col-xs-4">
-                <p class="leading">ODPOSLECH 2</p>
-              </div>
-              <div class="col-xs-4">
-                <p class="leading">ODPOSLECH 3</p>
+              <div class="row" style="text-align: center; margin-top: 2rem">
+                <div class="col-xs-4">
+                  <p class="leading">ODPOSLECH 1</p>
+                </div>
+                <div class="col-xs-4">
+                  <p class="leading">ODPOSLECH 2</p>
+                </div>
+                <div class="col-xs-4">
+                  <p class="leading">ODPOSLECH 3</p>
+                </div>
               </div>
             </div>
           </div>
@@ -439,23 +465,12 @@
           <address>
             <p>David Watzl<br>Ječmínkova 40/6, 460 14 Liberec<br><a href="tel:601588489">601 588 489</a> <br> <a href="mailto:info@duominimax.cz">info@duominimax.cz</a></p> 
           </address>
-          <!--
-          <form action="#" class="newsletter-form">
-            <input type="email" placeholder="Vložte vaši emailovou adresu pro odběr našeho newsletteru..." data-kwimpalastatus="alive" data-kwimpalaid="1548769199910-2">
-            <input type="submit" class="button cut-corner" value="Přihlásit">
-          </form> 
-          <div class="social-links">
-            <a href="#"><i class="fa fa-facebook-square"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-          </div>
-          -->
           <p class="copy">Copyright 2019 Duo Minimax. Designed by Symeon</p>
         </div>
       </footer>
     </div>
-    <script src="js/jquery-1.11.1.min.js"></script>		
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
 </body></html>
