@@ -373,6 +373,9 @@ body {
       }
     }
     @media (max-width: 1060px) {
+      .carousel-caption .slide-cta {
+        margin-top: 1rem;
+      }
       .carousel-caption .slide-title {
         font-size: 3rem;
         margin-bottom: 1rem;
@@ -387,11 +390,11 @@ body {
       }
     }
     @media (max-width: 980px) {
-      .carousel-caption .slide-subtitle, .carousel-caption .slide-desc {
+      .carousel-caption .slide-desc {
         display: none;
       }
-      .carousel-caption .slide-title {
-        margin-bottom:2rem;
+      .carousel-caption .slide-title, .carousel-caption .slide-subtitle {
+        margin-bottom: 1.5rem;
       }
     }
     @media (max-width: 760px) {
@@ -1834,6 +1837,11 @@ body {
   .site-header .container {
     *zoom: 1;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media (max-width: 1200px) {
+    .site-header .container {
+      border-bottom: none;
+    }
+  }
     /* line 4, sass/libs/_mixins.scss */
     .site-header .container:after {
       content: " ";
