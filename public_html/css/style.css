@@ -372,7 +372,7 @@ body {
         margin-bottom: 1rem;
       }
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1060px) {
       .carousel-caption .slide-title {
         font-size: 3rem;
         margin-bottom: 1rem;
@@ -386,12 +386,20 @@ body {
         margin-bottom: 1rem;
       }
     }
-    @media (max-width: 930px) {
+    @media (max-width: 980px) {
       .carousel-caption .slide-subtitle, .carousel-caption .slide-desc {
         display: none;
       }
       .carousel-caption .slide-title {
         margin-bottom:2rem;
+      }
+    }
+    @media (max-width: 760px) {
+      .carousel-caption .slide-title {
+        display: none;
+      }
+      .carousel-control-prev, .carousel-control-next {
+        display: none;
       }
     }
 
