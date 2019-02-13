@@ -1,7 +1,58 @@
-$(document).on("click", '[data-toggle="lightbox"]', function(event) {
-  event.preventDefault();
-  $(this).ekkoLightbox();
+$(document).ready(function() {
+  $('.filterable-items').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Vzdržte, načítám se...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      tError: '<a href="%url%">Obrázek #%curr%</a> se nezdařilo načíst.',
+      titleSrc: function(item) {
+        return item.el.attr('title') + '<small>duo Minimax</small>';
+      }
+    }
+  });
 });
+
+window.onload = function() {
+ shuffleElements( $('.filterable-item') );
+};
+
+function shuffleElements($elements) {
+	var i, index1, index2, temp_val;
+
+	var count = $elements.length;
+	var $parent = $elements.parent();
+	var shuffled_array = [];
+
+
+	// populate array of indexes
+	for (i = 0; i < count; i++) {
+		shuffled_array.push(i);
+	}
+
+	// shuffle indexes
+	for (i = 0; i < count; i++) {
+		index1 = (Math.random() * count) | 0;
+		index2 = (Math.random() * count) | 0;
+
+		temp_val = shuffled_array[index1];
+		shuffled_array[index1] = shuffled_array[index2];
+		shuffled_array[index2] = temp_val;
+	}
+
+	// apply random order to elements
+	$elements.detach();
+	for (i = 0; i < count; i++) {
+		$parent.append( $elements.eq(shuffled_array[i]) );
+	}
+}
+
+
 (function($, document, window){
 
 	$(document).ready(function(){
@@ -97,14 +148,6 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 	         });
 	         return false;
 	    });
-
-	    initLightbox({
-	    	selector : '.filterable-item a',
-	    	overlay: true,
-	    	closeButton: true,
-	    	arrow: true
-	    });
-
 	    $(".mobile-menu").append($(".main-navigation .menu").clone());
 	    $(".toggle-menu").click(function(){
 	    	$(".mobile-menu").slideToggle();

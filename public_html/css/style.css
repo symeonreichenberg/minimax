@@ -260,111 +260,7 @@ textarea {
   box-shadow: 0px 10px 42px 0px rgba(0,0,0,0.75);
   background-color: #191919;
 }
-.table {
-  /*!
-  // IE needs inline-block to position scrolling shadows otherwise use:
-  // display: block;
-  // max-width: min-content;
-  */
-  display: inline-block;
-  vertical-align: top;
-  max-width: 100%;
-  
-  overflow-x: auto;
-  
-  // optional - looks better for small cell values
-  white-space: nowrap;
 
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.table,
-.table--flip tbody {
-  // optional - enable iOS momentum scrolling
-  -webkit-overflow-scrolling: touch;
-  
-  // scrolling shadows
-  background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
-              radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
-  background-size: 10px 100%, 10px 100%;
-  background-attachment: scroll, scroll;
-  background-repeat: no-repeat;
-}
-
-// change these gradients from white to your background colour if it differs
-// gradient on the first cells to hide the left shadow
-.table td:first-child,
-.table--flip tbody tr:first-child {
-  background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-  background-repeat: no-repeat;
-  background-size: 20px 100%;
-}
-
-// gradient on the last cells to hide the right shadow
-.table td:last-child,
-.table--flip tbody tr:last-child {
-  background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  background-size: 20px 100%;
-}
-
-.table th {
-  font-size: 11px;
-  text-align: left;
-  text-transform: uppercase;
-  background: #f2f0e6;
-}
-
-.table th,
-.table td {
-  padding: 6px 12px;
-  border: 1px solid #d9d7ce;
-}
-
-.table--flip {
-  display: flex;
-  overflow: hidden;
-  background: none;
-}
-
-.table--flip thead {
-  display: flex;
-  flex-shrink: 0;
-  min-width: min-content;
-}
-
-.table--flip tbody {
-  display: flex;
-  position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.table--flip tr {
-  display: flex;
-  flex-direction: column;
-  min-width: min-content;
-  flex-shrink: 0;
-}
-
-.table--flip td,
-.table--flip th {
-  display: block;
-}
-
-.table--flip td {
-  background-image: none !important;
-  // border-collapse is no longer active
-  border-left: 0;
-}
-
-// border-collapse is no longer active
-.table--flip th:not(:last-child),
-.table--flip td:not(:last-child) {
-  border-bottom: 0;
-}
 /* line 534, sass/libs/_normalize.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
@@ -459,13 +355,24 @@ body {
       font-size: 1.875rem;
       font-weight: 300;
       line-height: normal;
-      margin: 0;
+      margin: 0 0 2rem 0;
       line-height: normal;
     }
-    @media (min-width: 768px) {
-      .carousel {
-        height: 50%;
+    @media (max-width: 1200px) {
+      .carousel-caption .slide-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
       }
+      .carousel-caption .slide-subtitle {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .carousel-caption .slide-desc {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+    @media (max-width: 1000px) {
       .carousel-caption .slide-title {
         font-size: 3rem;
         margin-bottom: 1rem;
@@ -477,6 +384,14 @@ body {
       .carousel-caption .slide-desc {
         font-size: 1rem;
         margin-bottom: 1rem;
+      }
+    }
+    @media (max-width: 930px) {
+      .carousel-caption .slide-subtitle, .carousel-caption .slide-desc {
+        display: none;
+      }
+      .carousel-caption .slide-title {
+        margin-bottom:2rem;
       }
     }
 
@@ -2761,7 +2676,8 @@ body {
   -webkit-transition-property: -webkit-transform, opacity;
           transition-property: transform, opacity;
   -webkit-transition-duration: .3s;
-          transition-duration: .3s; }
+          transition-duration: .3s;
+}
 
 /* line 54, sass/pages/_gallery.scss */
 .filterable-items {
